@@ -22,6 +22,8 @@ spring:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
       timeout: 3s
+      ssl:
+        enabled: ${REDIS_SSL:false}
 
 management:
   endpoints:

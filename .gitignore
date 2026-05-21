@@ -1,0 +1,39 @@
+# ===== Java / Gradle (backend 빌드 산출물) =====
+build/
+.gradle/
+out/
+target/
+*.class
+*.jar
+
+# ===== Node / Vite (frontend 빌드 산출물 + 패키지) =====
+node_modules/
+dist/
+.vite/
+*.log
+npm-debug.log*
+
+# ===== IDE / Editor 개인 설정 =====
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# ===== OS 자동 생성 파일 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 비밀값 / 환경별 설정 =====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/
+
+# ===== Docker 로컬 데이터 (안 만들지만 안전망) =====
+pg-data/
+redis-data/

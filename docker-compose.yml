@@ -1,5 +1,9 @@
 name: awsstudy
 
+# 백엔드 + 의존성(PostgreSQL, Redis) 만 컨테이너로 띄움.
+# 프론트엔드는 호스트에서 'npm run dev' 로 띄움 (vite dev server, 5173 포트).
+# vite.config.js 의 proxy 설정이 /api → http://localhost:8080 으로 자동 전달.
+
 services:
   postgres:
     image: postgres:17-alpine
@@ -54,16 +58,6 @@ services:
       timeout: 3s
       retries: 10
       start_period: 30s
-
-  frontend:
-    build: ./frontend
-    container_name: awsstudy-frontend
-    depends_on:
-      - backend
-    environment:
-      BACKEND_HOST: backend
-    ports:
-      - "8081:80"
 
 volumes:
   pg-data:
